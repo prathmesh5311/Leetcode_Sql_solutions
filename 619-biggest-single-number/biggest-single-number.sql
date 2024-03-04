@@ -5,7 +5,6 @@ Query: find largest single number, if there is no single number then report null
 Output: num
 
 */
-SELECT MAX(num) AS num 
-FROM MyNumbers
+SELECT MAX(num) AS num FROM mynumbers
 WHERE num IN
- ( SELECT  num FROM MyNumbers GROUP BY num HAVING COUNT(*) = 1) ;
+(SELECT num FROM Mynumbers GROUP BY num HAVING COUNT(*)=1);
